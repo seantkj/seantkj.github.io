@@ -1,72 +1,167 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my page!</title>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link href="futurestyles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+        <title>Welcome!</title>
+    </head>
+    <a id="home"></a>
+    <body class="future-bg">
+        <header id="webtitle">
+            <nav id="navbar">
+                <div class="title_pic">
+                    <img src="logopic.png" id="logo">
+                </div>
 
-    <style>
-        a{
-            color:purple;
-        }
+                <ul class="nav nav-item justify-content-center">
+                    <li>
+                        <a class="nav-link text-white" href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-white" href="#aboutme">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-white" href="#contactme">Contact</a>
+                    </li>
+                    <!-- <li>
+                        <a class="nav-link text-white" href="./future.html">Future</a>
+                    </li> -->
+                </ul>
+            </nav>
+        </header>
+        <a id="aboutme"></a>
+        <div class="flex-box">
+            <h3>About Me</h3>
+            <div class="flex-container sec-void reveal">
+                <div id="first-pic-tle">
+                    <!-- <h2>CS Education</h2> -->
+                    <div><img src="firstpic.jpg" class="img-size"></div>
+                </div>
+                <div id="first-content">
+                    <p>
+                        Hi there! I am Sean, welcome to my page!
+                    </p>
+                    <!-- <p>
+                        My passion is in the arts and technology.
+                    </p> -->
+                </div>
+            </div>
+            <div class="flex-container sec-void reveal">
+                <div id="second-title">
+                    <!-- <h2>BJJ</h2> -->
+                </div>
+                <div id="second-pic">
+                    <img src="scispic.jpeg" class="img-size2">
+                </div>
+                <div id="second-content">
+                    <p>I am currently a sophomore at SMU SCIS.</p>
+                    <!-- <p>
+                    I am currently a sophomore at Singapore Management University's 
+                    School of Computing and Information Systems (SMU SCIS). 
+                    </p> -->
+                    <!-- <p>
+                        I have become familiar with the fundamentals of Web development, Python programming, and Database Management during my time at SMU thus far.
+                    </p> -->
+                </div>
+            </div>
+            <div class="flex-container sec-void reveal">
+                <div id="third-content">
+                    <p>
+                    During my free time, I enjoy working out and hitting the gym. 
+                    </p>
+                    <!-- <p>
+                        Personally, I enjoy powerlifting-style training the most.
+                    </p> -->
+                </div>
+                <div id="third-pic-tle">
+                    <!-- <h2>overall</h2> -->
+                    <div><img src="gympic.jpg" class="img-size"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="contact-bar"></div>
+        <div id="contact-me">
+            <h2>Contact Me!</h2>
+            <p>@ marcustanyonghan@gmail.com</p>
+            <h3>Or</h3>
+            <input type="text" autocomplete="off" placeholder="Send your messages here!">
+            <button type="submit" value="Send!">Send!</button>
+        </div> -->
+        <script type="text/javascript">
+            window.addEventListener("scroll", reveal);
 
-        .bio{
-            text-align: center;
-            background-color: aquamarine;
-            border:3px solid purple;
-            border-radius: 10%;
-            padding:10px;
-            width:fit-content;
-        }
+            function reveal(){
+                var reveals = document.querySelectorAll(".reveal");
 
+                for(var i = 0; i < reveals.length; i++){
 
-    </style>
-</head>
-<body>
-    <h1>Hello I am Sean</h1>
-    <div class="bio">
-        <h3>About Me:</h3>
-        <br>
-        I am a year 2 SMU SCIS student
-    </div>
-<br>
-<img src="./githubpp2.jpg">
-<br>
-<br>
-<br>
-This is my favourite travel destination:
-<br>
-<div id="muteYouTubeVideoPlayer"></div>
+                    var windowheight = window.innerHeight;
+                    var revealtop = reveals[i].getBoundingClientRect().top;
+                    var revealpoint = 10;
 
-<script async src="https://www.youtube.com/iframe_api"></script>
-<script>
-  function onYouTubeIframeAPIReady() {
-    var player;
-    player = new YT.Player('muteYouTubeVideoPlayer', {
-      videoId: 'HSsqzzuGTPo', // YouTube Video ID
-      width: 560, // Player width (in px)
-      height: 316, // Player height (in px)
-      playerVars: {
-        autoplay: 1, // Auto-play the video on load
-        controls: 1, // Show pause/play buttons in player
-        showinfo: 0, // Hide the video title
-        modestbranding: 1, // Hide the Youtube Logo
-        loop: 1, // Run the video in a loop
-        fs: 0, // Hide the full screen button
-        cc_load_policy: 0, // Hide closed captions
-        iv_load_policy: 3, // Hide the Video Annotations
-        autohide: 0, // Hide video controls when playing
-      },
-      events: {
-        onReady: function (e) {
-          e.target.mute();
-        },
-      },
-    });
-  }
-  </script>
-</body>
+                    if(revealtop < windowheight - revealpoint){
+                        reveals[i].classList.add("active");
+                    }
+            }
+            }
+
+        </script>
+
+    </body>
+    <a id="contactme"></a>
+    <footer class="text-center text-white" id="dark-foot">
+        <div class="container" id="dark-foot">
+            <div class="row">
+
+                <div class="col">
+                    <h3 id="foot-title">Contact Me</h3>
+                    <!-- <p >This Only Took Me 4 Months And Alot Of Late Nights</p> -->
+                </div>
+                <div class="w-100"></div>
+                <div class="col-sm-6 mb-0 contactcol1">
+                    <!-- <h5 class="text-uppercase"></h5> -->
+                    <h6>seantan2000@live.com.sg</h6>
+                    <ul class="no-dots">
+                        <li>
+                            <a href="https://www.instagram.com/sean.tn/" target="_blank"><img src="ig.png"></a>
+                        </li>
+                        <!-- <li>
+                            <a href="./past.html">Past</a>
+                        </li>
+                        <li>
+                            <a href="./future.html">Future</a>
+                        </li>
+                        <li>
+                            <a href="./making.html">CS50</a>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 mb-0 contactcol2">
+                    <!-- <h5 class="text-uppercase">LINKS</h5> -->
+                    <h6>sean.tan.2021@scis.smu.edu.sg</h6>
+                    <ul class="no-dots">
+                        <li>
+                            <a href="https://www.linkedin.com/in/seantankj" target="_blank"><img src="linkedin.png"></a>
+                        </li>
+                        <!-- <li>
+                            <a href="./past.html">Past</a>
+                        </li>
+                        <li>
+                            <a href="./future.html">Future</a>
+                        </li>
+                        <li>
+                            <a href="./making.html">CS50</a> -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </html>
-
-
